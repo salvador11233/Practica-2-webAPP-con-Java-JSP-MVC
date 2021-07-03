@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Añadir Libros</title>
+	<link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+	<script src="../../js/bootstrap.bundle.min.js"></script>
+</h:head>
+<body>
+	<ui:composition template="../index.xhtml">
+		<div class="container-fluid">
+			<ui:define name="content">
+				<h3>Nuevo Venta</h3>
+				<h:form>
+				<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<label for="fecha" class="form-label">Fecha:</label>
+						<h:inputText class="form-control" id="fecha"
+							value="#{ventaBO.venta.fecha}" />
+					</div>
+					<div class="col-sm-6">
+						<label for="numCliente" class="form-label">Número de cliente:</label>
+						<h:inputText class="form-control" id="numCliente"
+							value="#{ventaBO.venta.numCliente}" />
+					</div>
+					<div class="col-sm-6">
+						<label for="codLibro" class="form-label">Codigó del libro:</label>
+						<h:inputText class="form-control" id="codLibro"
+							value="#{ventaBO.venta.codLibro}" />
+					</div>
+					<div class="col-sm-6">
+						
+					</div>
+					
+					<div class="col-sm-6" style="padding-top: 15px; text-align: center;">
+						<h:commandLink action="#{ventaBO.save}" value="Guardar"
+						class="btn btn-info col-sm-4" />
+					</div>
+					
+					<div class="col-sm-6" style="padding-top: 15px; text-align: center;">
+					<a class="btn btn-danger col-sm-4" href="../Ventas/ventas.xhtml">Cancelar</a>
+					</div>
+				</div>
+				</div>		
+				</h:form>
+			</ui:define>
+		</div>
+	</ui:composition>
+</body>
+</html>

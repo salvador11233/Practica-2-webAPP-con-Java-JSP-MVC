@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Lista de Clientes</title>
+<link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+<script src="../../js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+	<ui:composition template="../index.xhtml">
+		<ui:define name="content">
+		<h2 style="text-align: center;">Ventas</h2>
+			<div class="container-fluid">
+				<h:form>
+					<h:dataTable value="#{ventaBO.ventas}" var="venta"
+						class="table table-striped table-hover">
+						<h:column>
+							<f:facet name="header">NumFactura</f:facet>    				
+               				#{venta.numFacturas}
+           					 </h:column>
+						<h:column>
+							<f:facet name="header">Fecha</f:facet>    				
+              				#{venta.fecha}
+            			</h:column>
+						<h:column>
+							<f:facet name="header">Codigó de Cliente</f:facet>    				
+               				#{venta.numCliente}
+            			</h:column>
+						<h:column>
+							<f:facet name="header">Codigó del Libro</f:facet>    				
+               				#{venta.codLibro}
+            			</h:column>
+						<h:column>
+							<f:facet name="header">Editar</f:facet>
+							<h:commandButton action="#{ventaBO.edit(venta.numFacturas)}"
+								value="Editar" class="btn btn-success" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Eliminar</f:facet>
+							<h:commandButton action="#{ventaBO.eliminar(venta.numFacturas)}"
+								value="Eliminar" class="btn btn-danger" />
+						</h:column>
+					</h:dataTable>
+
+					<h:commandLink action="anadirV" value="Nuevo" class="btn btn-secondary" />
+						
+				</h:form>
+			</div>
+		</ui:define>
+		
+		
+	</ui:composition>
+</body>
+</html>

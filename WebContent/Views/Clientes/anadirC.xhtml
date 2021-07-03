@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Añadir Libros</title>
+	<link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+	<script src="../../js/bootstrap.bundle.min.js"></script>
+</h:head>
+<body>
+	<ui:composition template="../index.xhtml">
+		<div class="container-fluid">
+			<ui:define name="content">
+				<h3>Nuevo Cliente</h3>
+				<h:form>
+				<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<label for="dni" class="form-label">DNI:</label>
+						<h:inputText class="form-control" id="dni"
+							value="#{clienteBO.cliente.dni}" />
+					</div>
+					<div class="col-sm-6">
+						<label for="nombre" class="form-label">Nombre:</label>
+						<h:inputText class="form-control" id="nombre"
+							value="#{clienteBO.cliente.nombre}" />
+					</div>
+					<div class="col-sm-6">
+						<label for="apellidos" class="form-label">Apellidos:</label>
+						<h:inputText class="form-control" id="apellidos"
+							value="#{clienteBO.cliente.apellidos}" />
+					</div>
+					<div class="col-sm-6">
+						<label for="direccion" class="form-label">Dirección:</label>
+						<h:inputText class="form-control" id="direccion"
+							value="#{clienteBO.cliente.direccion}" />
+					</div>
+					<div class="col-sm-6">
+						<label for="codCiudad" class="form-label">Codigó de Ciudad:</label>
+						<h:inputText class="form-control" id="codCiudad"
+							value="#{clienteBO.cliente.codCiudad}" />
+					</div>
+					<div class="col-sm-6">
+						<label for="cp" class="form-label">Código Postal:</label>
+						<h:inputText class="form-control" id="cp"
+							value="#{clienteBO.cliente.cp}" />
+					</div>
+					<div class="col-sm-6">
+						<label for="telefono" class="form-label">Télefono:</label>
+						<h:inputText class="form-control" id="telefono"
+							value="#{clienteBO.cliente.telefono}" />
+					</div>
+					<div class="col-sm-6">
+						<label for="email" class="form-label">Correo Electronico:</label>
+						<h:inputText class="form-control" id="email"
+							value="#{clienteBO.cliente.email}" />
+					</div>
+					
+					<div class="col-sm-6" style="padding-top: 15px; text-align: center;">
+						<h:commandLink action="#{clienteBO.save}" value="Guardar"
+						class="btn btn-info col-sm-4" />
+					</div>
+					
+					<div class="col-sm-6" style="padding-top: 15px; text-align: center;">
+					<a class="btn btn-danger col-sm-4" href="../Clientes/clientes.xhtml">Cancelar</a>
+					</div>
+				</div>
+				</div>		
+				</h:form>
+			</ui:define>
+		</div>
+	</ui:composition>
+</body>
+</html>
